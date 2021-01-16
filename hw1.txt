@@ -1,0 +1,31 @@
+1. In the set theory, we see two sets containing the same kind of elements are identical. 
+Thus to eliminate duplicates in the list, I set up the auxiliary function rm_dup that return a list without duplicates. 
+The subset function takes two lists and converts them into the set form. 
+And, check recursively if a member of a is in the set b. 
+It returns true if a is a subset of b.
+
+2. A simple approach that exploiting former subset function makes life easier. 
+The function equal_sets returns true if a is a subset of b and also b is a subset of a.
+
+3. The set_union is much more straightforward. 
+Made concatenation of two lists and removed duplicates.
+
+4. For this function, I used a basic mathematical set equation that is (A-B or B-A) equals (A or B - A and B). 
+Then, I could use set_union and set_intersection and got a difference between them recursively. 
+To solve this problem, I created another auxiliary function name that set_intersection. 
+This function recursively checks the first list's element whether it is in the second one and returns the overlapped list.
+
+5. In Ocaml, a list is only formed by the same type. 
+But, a set represented by itself needs two types in the list of itself. 
+For example, a list that has 'a type element is 'a list. 
+So if this list is represented by itself, this list should have both 'a and 'a list types.
+
+6. This function is straightforward. 
+compute f(x) and compare to the x with a condition eq. 
+If f(x) is x then return x, else then replace x to f(x) and do recursion.
+
+7. I borrowed a logical structure from CS131 code help pages. 
+When I put the starting symbol and grammar rules, the function computes a fixed point. 
+That point is a list of all nonterminal symbols. 
+The argument function, get_reachable_symbols, returns a list of nonterminal symbols from one grammar iteration. 
+Then, I could use all reachable nonterminal symbols to filtering grammar rules.
